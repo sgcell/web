@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>星乂尘 - 资源导航</title>
+<meta name="keywords" content="星乂尘,变音器,全局翻译,资源,导航,安卓,软件,分享,ALua,AndroLua,QQ">
+<meta name="description" content="导航内容：安卓软件、网址链接、文件资源……">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="bookmark" href="favicon.ico"/>
+<style>
+body{background-color:#fff;padding:0;margin:0;font-size:100%}
+canvas{position:fixed;z-index:-1}
+.head{padding:9px 3px 0 12px}
+.head>span{font-size:1.2em;font-weight:bold;color:#333}
+.head>a{font-weight:bold;float:right;padding:3px 12px}
+.url{font-weight:bold}
+.url:before{font-weight:bold;content:'»';margin-right:6px}
+.ps{margin-left:12px}
+a{text-decoration:none;color:#08f}
+a:hover{text-decoration:underline}
+h2{color:#096;border-left:12px solid #096;padding-left:6px;margin-left:12px}
+.main{border:1px solid #096;-webkit-border-radius:9px;border-radius:9px;margin:0 9px;padding:0 9px;background-color:#f6f8f9}
+b{color:#494949}
+footer{text-align:center}
+footer>pre{margin:3px 0 6px}
+footer>div{margin:6px 0 21px;font-size:0.8em}
+</style>
+<script>
+if(location.hostname.includes('top-tech.cc')){
+var _hmt=_hmt||[];
+(function(){
+  var hm=document.createElement("script");
+  hm.src="https://hm.baidu.com/hm.js?7aab648f90d72fbb4c9a0a97939fb6e0";
+  var s=document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm,s);
+})()};
+</script>
+</head>
+<body><canvas></canvas>
+<div class='head'>
+<span>星乂尘 - 资源导航</span><a href="pay/index.html">捐赠&赞赏</a>
+</div>
+<hr>
+
+<h2>交流反馈</h2>
+<div class="main">
+<p><b>邮箱：</b>1416165041@qq.com</p>
+<p><b>QQ群：</b>
+<a id="qq1" href="https://jq.qq.com/?_wv=1027&k=5EHqlW0">518827455</a>
+<a id="qq2" class="ps" href="https://jq.qq.com/?_wv=1027&k=5bJXIl1">570698834</a>
+</p>
+</div>
+
+<h2>安卓软件</h2>
+<div class="main">
+<p><a class="url" href="https://alua.lanzoux.com/b0d1s47mb" target="_blank">QQ变音器</a>
+<a class="ps" href="https://alua.lanzoux.com/b0d1psikb" target="_blank">语音包</a>
+<br>替换语音文件、文字转语音
+<br>支持QQ、微信、Tim
+<br>附加功能：屏蔽UC开屏广告、查看QQ缓存图片、QQ名片赞、播放QQ语音红包口令……
+</p>
+<p><a class="url" href="https://alua.lanzoul.com/b0d1s47mb" target="_blank">全局翻译</a>
+<br>即时翻译软件<br>支持复制翻译、点按翻译、编辑框翻译、划词翻译
+<br>支持源语言取决于翻译api，目标语言：中(简/繁)、英、日、韩
+</p>
+<p><a class="url" href="https://alua.lanzoux.com/b0d1s47mb" target="_blank">应用管理</a>
+<br>查看应用信息、备份、安装、卸载、启动应用活动</p>
+</div>
+
+<!--
+<h2>网址链接</h2>
+<div class="main">
+<p><a class="url" href="h.html">黄色网页</a></p>
+<p><a class="url" href="v.html">小视频-美女如云</a></p>
+</div>
+-->
+
+<h2>文件资源</h2>
+<div class="main">
+<p><a class="url" href="https://alua.lanzoux.com/b0d1s47mb" target="_blank">安卓软件</a>
+<span class='desc'>个人软件、旧版软件、破解软件</span>
+</p>
+<p><a class="url" href="https://alua.lanzoux.com/b0d1s47sh" target="_blank">其他文件</a>
+<span class='desc'>暂时没啥好东西……</span>
+</p>
+</div>
+
+<br>
+<footer><hr>
+<pre id="siteTime"></pre>
+<small>Copyright © 2018-2026 All Rights Reserved</small>
+<div>欢迎分享资源、反馈建议及其他合作</div>
+</footer>
+
+<script>
+function G(id){return document.getElementById(id);}
+function value(x){x=Math.floor(x);if(x<10){return "0"+x};return x;}
+function uptime(){var dif=new Date()/1000-1535428800;
+  var d=value(dif/(24*3600));dif%=24*3600;var h=value(dif/3600);
+  dif%=3600;var m=value(dif/60);var s=value(dif%60);
+  G("siteTime").innerHTML="本站已运行："+d+"天"+h+"时"+m+"分"+s+"秒";}
+setInterval(uptime,1000);
+
+if(!navigator.userAgent.match(/QQ\/[0-9]/i)){
+qq1.href="javascript:void(0)";qq2.href="javascript:void(0)";
+qq1.style.color="#000";qq2.style.color="#000";}
+
+var canvas=document.getElementsByTagName('canvas')[0];
+canvas.height=window.innerHeight;canvas.width=window.innerWidth;
+c=canvas.getContext('2d');window.addEventListener('resize',function(){
+canvas.height=window.innerHeight;canvas.width=window.innerWidth;initCanvas()})
+var mouse={x:undefined,y:undefined};
+window.addEventListener('mousemove',function(event){
+mouse.x=event.x;mouse.y=event.y;drawCircles()});
+window.addEventListener("touchmove",function(event){
+let touch=event.touches[0];mouse.x=touch.clientX;mouse.y=touch.clientY;drawCircles()});
+function Circle(x,y,radius,vx,vy,rgb,birth,life){this.x=x;this.y=y;this.radius=radius;
+  this.minRadius=radius;this.vx=vx;this.vy=vy;this.birth=birth;this.life=life;
+  this.opacity=1;this.draw=function(){c.beginPath();c.arc(this.x,this.y,this.radius,Math.PI*2,false);
+  c.fillStyle='rgba('+rgb+','+this.opacity+')';c.fill()};this.update=function(){
+    if(this.x+this.radius>innerWidth||this.x-this.radius<0){this.vx=-this.vx};
+    if(this.y+this.radius>innerHeight||this.y-this.radius<0){this.vy=-this.vy};
+    this.x+=this.vx;this.y+=this.vy;this.opacity=1-(((frame-this.birth)*1)/this.life);
+    if(frame>this.birth+this.life){for(let i=0;i<circleArray.length;i++){
+      if(this.birth==circleArray[i].birth&&this.life==circleArray[i].life){circleArray.splice(i,1);break}}
+}else{this.draw()}}};var circleArray=[];function initCanvas(){circleArray=[]}
+var colorArray=['100,200,100','255,160,160','80,160,255'];function drawCircles(){
+  for(let i=0;i<3;i++){let radius=Math.floor(Math.random()*4)+2;let spawnFrame=frame;
+    let life=150;let vx=(Math.random()*4)-2;let vy=(Math.random()*4)-2;
+    let rgb=colorArray[Math.floor(Math.random()*colorArray.length)];
+    circleArray.push(new Circle(mouse.x,mouse.y,radius,vx,vy,rgb,spawnFrame,life))}}
+var frame=0;function animate(){requestAnimationFrame(animate);frame+=1;
+  c.clearRect(0,0,innerWidth,innerHeight);for(let i=0;i<circleArray.length;i++){
+  circleArray[i].update()}}initCanvas();animate();
+</script>
+</body>
+</html>

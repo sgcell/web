@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>404 找不到此页面</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{background-color:#fff;padding:0;margin:0;font-size:100%;color:#666;text-align:center}
+canvas{position:fixed;z-index:-1;margin-left:-50%}
+.txt1{font-weight:949;font-size:6em;padding-top:50px}
+.txt2{font-weight:bold;font-size:1.5em}
+.txt3{color:#888;font-size:0.9em;text-align:left;width:13em;margin:0 auto 30px}
+li{margin:12px -6px}
+a{text-decoration:none;color:#fff;font-weight:bold;font-size:1.2em;padding:15px 21px;
+-webkit-border-radius:9px;border-radius:9px;background-color:#29f}
+footer{text-align:center;margin:180px 0 10px}
+footer>pre{margin:3px 0 6px}
+footer>div{margin:6px 0 21px;font-size:0.8em}
+</style>
+<script>
+if(location.hostname.includes('top-tech.cc')){
+var _hmt=_hmt||[];
+(function(){
+  var hm=document.createElement("script");
+  hm.src="https://hm.baidu.com/hm.js?7aab648f90d72fbb4c9a0a97939fb6e0";
+  var s=document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm,s);
+})()};
+</script>
+</head>
+<body><canvas></canvas>
+<div class="txt1">404</div>
+<p class="txt2">哎呀，出错了~</p>
+<div class="txt3">
+<p>可能的原因：</p>
+<ul><li>原来的页面不存在了</li><li>服务器被外星人劫持了</li></ul>
+</div>
+<a href="index.html">返回首页</a>
+<footer><hr>
+<pre id="siteTime"></pre>
+<small>Copyright © 2018-2026 All Rights Reserved</small>
+<div>欢迎分享资源、反馈建议及其他合作</div>
+</footer>
+<script>
+function G(id){return document.getElementById(id);}
+function value(x){x=Math.floor(x);if(x<10){return "0"+x};return x;}
+function uptime(){var dif=new Date()/1000-1535428800;
+  var d=value(dif/(24*3600));dif%=24*3600;var h=value(dif/3600);
+  dif%=3600;var m=value(dif/60);var s=value(dif%60);
+  G("siteTime").innerHTML="本站已运行："+d+"天"+h+"时"+m+"分"+s+"秒";}
+setInterval(uptime,1000);
+
+(function(){
+function ready(fn){if(document.readyState!='loading'){fn();}else{document.addEventListener('DOMContentLoaded',fn)}}
+function makeSnow(el){var ctx=el.getContext('2d');var particles=[];var width=0;var height=0;
+var Particle=function(){this.x=this.y=this.dx=this.dy=0;this.reset()}
+Particle.prototype.reset=function(){this.y=Math.random()*height;this.x=Math.random()*width;
+this.dx=(Math.random()*1)-0.5;this.dy=(Math.random()*0.5)+0.5;}
+function createParticles(count){if(count!=particles.length){particles=[];for(var i=0;i<count;i++){particles.push(new Particle())}}}
+function onResize(){width=window.innerWidth;height=window.innerHeight;
+el.width=width;el.height=height;createParticles((width*height)/6666)}
+function updateParticles(){ctx.clearRect(0,0,width,height);ctx.fillStyle='#d6e9ff';
+particles.forEach(function(particle){particle.y+=particle.dy;particle.x+=particle.dx;
+if(particle.y>height){particle.y=0};if(particle.x>width){particle.reset();particle.y=0}
+ctx.beginPath();ctx.arc(particle.x,particle.y,6,0,Math.PI*2,false);ctx.fill()});
+window.requestAnimationFrame(updateParticles)}onResize();updateParticles()}
+ready(function(){makeSnow(document.querySelector('canvas'))})})();
+</script>
+</body>
+</html>
