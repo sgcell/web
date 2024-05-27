@@ -13,8 +13,8 @@ a{text-decoration:none;color:#08f}
 .bu>a{flex:1;width:100px;color:#fff;font-size:1.1em;padding:0.5em 0.8em;margin:0 5px;-webkit-border-radius:9px;border-radius:9px;background-color:#0cf}
 img{width:300px}
 footer{text-align:center;margin:0px 0 10px}
-footer>pre{margin:3px 0 6px}
-footer>div{margin:6px 0 21px;font-size:0.8em}
+footer>pre{margin:6px 0 6px}
+footer>div{margin:6px 0 6px;font-size:0.9em}
 footer a{font-weight:bold}
 </style>
 <script>
@@ -34,28 +34,27 @@ if(navigator.userAgent.match(/Alipay/i)){location.href="https://qr.alipay.com/00
 <hr>
 <div>直接扫码 或 保存图片 > 扫一扫 > 相册</div>
 <div>请备注 <b>账号</b> 或 <b>缘由</b></div>
-<img id="pic">
+<img id="pic" src="wx.jpg">
 <center><div class="bu">
 <a onclick="new_pic('vf')">支付宝</a>
 <a onclick="new_pic('wx')">微信</a>
 </div></center><br>
 
 <footer><hr>
-<pre id="siteTime"></pre>
-<small>Copyright © 2018-2026 All Rights Reserved</small>
 <div>欢迎捐赠&赞赏，有问题请反馈<a href="../index.html">[首页]</a></div>
+<small>Copyright © 2018-2026 All Rights Reserved</small>
+<pre id="siteTime"></pre>
 </footer>
 
 <script>
-function G(id){return document.getElementById(id);}
-var pic=G('pic');
+var pic=document.getElementById("pic");
+var siteTime=document.getElementById("siteTime");
 function new_pic(x){pic.src=x+'.jpg'}
-new_pic('wx');
 function value(x){x=Math.floor(x);if(x<10){return "0"+x};return x;}
 function uptime(){var dif=new Date()/1000-1535428800;
   var d=value(dif/(24*3600));dif%=24*3600;var h=value(dif/3600);
   dif%=3600;var m=value(dif/60);var s=value(dif%60);
-  G("siteTime").innerHTML="本站已运行："+d+"天"+h+"时"+m+"分"+s+"秒";}
+  siteTime.innerHTML="本站已运行："+d+"天"+h+"时"+m+"分"+s+"秒";}
 setInterval(uptime,1000);
 </script>
 </body>
