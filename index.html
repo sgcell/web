@@ -23,8 +23,8 @@ h2{color:#096;border-left:12px solid #096;padding-left:6px;margin-left:12px}
 .main{border:1px solid #096;-webkit-border-radius:9px;border-radius:9px;margin:0 9px;padding:0 9px;background-color:#f6f8f9}
 b{color:#494949}
 footer{text-align:center}
-footer>pre{margin:3px 0 6px}
-footer>div{margin:6px 0 21px;font-size:0.8em}
+footer>pre{margin:6px 0 6px}
+footer>div{margin:6px 0 6px;font-size:0.9em}
 </style>
 <script>
 if(location.hostname.includes('top-tech.cc')){
@@ -88,18 +88,18 @@ var _hmt=_hmt||[];
 
 <br>
 <footer><hr>
-<pre id="siteTime"></pre>
-<small>Copyright © 2018-2026 All Rights Reserved</small>
 <div>欢迎分享资源、反馈建议及其他合作</div>
+<small>Copyright © 2018-2026 All Rights Reserved</small>
+<pre id="siteTime"></pre>
 </footer>
 
 <script>
-function G(id){return document.getElementById(id);}
+var siteTime=document.getElementById("siteTime");
 function value(x){x=Math.floor(x);if(x<10){return "0"+x};return x;}
 function uptime(){var dif=new Date()/1000-1535428800;
   var d=value(dif/(24*3600));dif%=24*3600;var h=value(dif/3600);
   dif%=3600;var m=value(dif/60);var s=value(dif%60);
-  G("siteTime").innerHTML="本站已运行："+d+"天"+h+"时"+m+"分"+s+"秒";}
+  siteTime.innerHTML="本站已运行："+d+"天"+h+"时"+m+"分"+s+"秒";}
 setInterval(uptime,1000);
 
 if(!navigator.userAgent.match(/QQ\/[0-9]/i)){
